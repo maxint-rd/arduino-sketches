@@ -93,7 +93,6 @@ void setup ()
   Rtc.Begin();
 
   RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
-  printDateTime(compiled);
   Serial.println();
 
   if (!Rtc.IsDateTimeValid()) 
@@ -208,50 +207,3 @@ void loop ()
   delay(250);
 }
 
-#define countof(a) (sizeof(a) / sizeof(a[0]))
-
-void printDateTime(const RtcDateTime& dt)
-{
-    //char datestring[20];    // somehow snprintf_P gives stability problems!
-    char datestring[30];
-
-    snprintf_P(datestring, 
-            countof(datestring),
-            PSTR("%02u/%02u/%04u %02u:%02u:%02u"),
-            dt.Month(),
-            dt.Day(),
-            dt.Year(),
-            dt.Hour(),
-            dt.Minute(),
-            dt.Second() );
-    Serial.println(datestring);
-}
-
-/** The function below was found on the Arduino forum.
- *  It can be used to check if a date falls within the US
- *  day-light saving dates. Note that in Europe different 
- *  dates are used, which requires this function to be modified.
- */
-/*
-bool isDST(const RtcDateTime& dt)
-{
-  bool fDST=false;
-  // ********************* Calculate offset for Sunday ********************* 
-  int y = dt.Year()%100;          // DS3231 uses two digit year (required here)
-  int x = (y + y/4 + 2) % 7;      // remainder will identify which day of month
-                                  // is Sunday by subtracting x from the one
-                                  // or two week window.  First two weeks for March
-                                  // and first week for November
-  // *********** Test DST: BEGINS on 2nd Sunday of March @ 2:00 AM ********* 
-  if(dt.Month() == 3 && dt.Day() == (14 - x) && dt.Hour() >= 2)
-    fDST = true;                           // Daylight Savings Time is TRUE (add one hour)
-  if((dt.Month() == 3 && dt.Day() > (14 - x)) || dt.Month() > 3)
-    fDST = true;
-  // ************* Test DST: ENDS on 1st Sunday of Nov @ 2:00 AM ************       
-  if(dt.Month() == 11 && dt.Day() == (7 - x) && dt.Hour() >= 2)
-  fDST = false;                            // daylight savings time is FALSE (Standard time)
-  if((dt.Month() == 11 && dt.Day() > (7 - x)) || dt.Month() > 11 || dt.Month() < 3)
-    fDST = false;
-  return(fDST);                        // if fDST is true add one hour (hour = hour + 1;) 
-}
-*/
