@@ -1,3 +1,18 @@
+# D1 Mini robot
+***ESP8266 robot, remotely controlled using Websockets-based Virtual joystick*** 
+- Control the robot over WiFi using a Virtual joystick
+- Onboard filesystem gives access to remote control in regular webpage
+- Fast connection for direct response using Websockets
+- See video at https://youtu.be/Yf0u55V7xuI
+
+## Used parts for robot:
+ - Yellow geared motors and wheels (listed as "TT Motor Smart Car Robot Gear Motor")
+ - MX1616 dual motor driver module (listed as "Mini Victory L298N")
+ - 3D printed motor mount and filament wire connector rings
+ - 3D printed o-ring castor wheel 
+ - 8-bit LED-indicator connected to PCF8575 to indicate direction. (See https://youtu.be/oG29a3th8ys )
+ - 5V USB-powerbank to power both motors and D1 mini
+
 # D1 Mini multi-I/O devboard
 ***Development board for D1 mini featuring multiple I/O interfaces***
  
@@ -66,12 +81,22 @@ that pull the pin low. D8 has a pull down. It is okay when used to drive a buzze
 ## Data upload
 FSWebServer - Example WebServer with SPIFFS backend for esp8266 by Hristo Gochkov. 
 Upload the contents of the data folder with MkSPIFFS Tool ("ESP8266 Sketch Data Upload" in Tools menu in Arduino IDE)
-Access the sample web page at http://esp8266fs.local
+Access the main web page at http://esp8266fs.local
 Edit the page by going to http://esp8266fs.local/edit
 
 ## Links
-**2C scanner code:**
- -    https://playground.arduino.cc/Main/I2cScanner
+-   Project share on PCBWay: https://www.pcbway.com/project/shareproject/Maxint_D1_mini_Multi_I_O_development_board.html
+-   BLough Alarm Clock on Tindie: https://www.tindie.com/products/brianlough/blough-alarm-clock-shield-for-wemos-d1-mini/
+-   Arduino library for TM1637, TM1640 and more: https://github.com/maxint-rd/TM16xx
+-   Arduino library for playing music: https://github.com/maxint-rd/MmlMusicPWM
+-   More info about my PCB designs: https://github.com/maxint-rd/arduino-modules
+-   WiFiManager library used for easy WiFi setup: https://github.com/tzapu/WiFiManager
+-   FSBrowser example for ESP8266: https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WebServer/examples/FSBrowser
+-   Virtual joystick source: https://github.com/jeromeetienne/virtualjoystick.js
+-   Websocket library: https://github.com/Links2004/arduinoWebSockets
+-   Websocket example: https://www.instructables.com/id/WiFi-WebSocket-Remote-Robot/
+-   I2C scanner code: https://playground.arduino.cc/Main/I2cScanner
+-   MDNS multicast domain name system: https://tttapa.github.io/ESP8266/Chap08%20-%20mDNS.html
  
 **Virtual joystick funcionality:**
  -    https://automatedhome.party/2017/07/15/wifi-controlled-car-with-a-self-hosted-htmljs-joystick-using-a-wemos-d1-miniesp8266/
@@ -82,10 +107,6 @@ Edit the page by going to http://esp8266fs.local/edit
  -    https://github.com/Links2004/arduinoWebSockets
  -    https://www.instructables.com/id/WiFi-WebSocket-Remote-Robot/
  -    https://github.com/moononournation/ESPWebSocketRemote
- 
-**MDNS multicast domain name system:**
- -    https://tttapa.github.io/ESP8266/Chap08%20-%20mDNS.html
-
 
 ## Disclaimer
 - All code on this GitHub account, including this library is provided to you on an as-is basis without guarantees and with all liability dismissed. It may be used at your own risk. Unfortunately I have no means to provide support.
