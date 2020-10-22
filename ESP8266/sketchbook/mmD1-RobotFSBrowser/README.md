@@ -63,8 +63,29 @@ that pull the pin low. D8 has a pull down. It is okay when used to drive a buzze
 - RGB2 A-C, DIG6
 - SW3 Key 8-12 on K1 (0-4 on K2)
 
+## Data upload
+FSWebServer - Example WebServer with SPIFFS backend for esp8266 by Hristo Gochkov. 
+Upload the contents of the data folder with MkSPIFFS Tool ("ESP8266 Sketch Data Upload" in Tools menu in Arduino IDE)
+Access the sample web page at http://esp8266fs.local
+Edit the page by going to http://esp8266fs.local/edit
+
 ## Links
-- I2C scanner code from  from https://playground.arduino.cc/Main/I2cScanner
+**2C scanner code:**
+ -    https://playground.arduino.cc/Main/I2cScanner
+ 
+**Virtual joystick funcionality:**
+ -    https://automatedhome.party/2017/07/15/wifi-controlled-car-with-a-self-hosted-htmljs-joystick-using-a-wemos-d1-miniesp8266/
+ -    based on http://jeromeetienne.github.io/virtualjoystick.js/examples/basic.html
+ -    source: https://github.com/jeromeetienne/virtualjoystick.js
+ 
+**Websocket functionality:**
+ -    https://github.com/Links2004/arduinoWebSockets
+ -    https://www.instructables.com/id/WiFi-WebSocket-Remote-Robot/
+ -    https://github.com/moononournation/ESPWebSocketRemote
+ 
+**MDNS multicast domain name system:**
+ -    https://tttapa.github.io/ESP8266/Chap08%20-%20mDNS.html
+
 
 ## Disclaimer
 - All code on this GitHub account, including this library is provided to you on an as-is basis without guarantees and with all liability dismissed. It may be used at your own risk. Unfortunately I have no means to provide support.
